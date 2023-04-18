@@ -13,9 +13,7 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: true}));
 
 app.get('/', (req, res, next) => {
-   setTimeout(()=>{
-    next(new Error('There was an error'))
-   }, 1);
+   res.json({message: 'Tested'})
 })
 
 app.use('/api',protect, router);  
